@@ -11,7 +11,7 @@ module Jekyll
       tag_title_suffix = site.config['tag_title_suffix'] || ''
 
       self.process(@name)
-      self.read_yaml(File.join(base, '_layouts'), 'tag_page.html')
+      self.read_yaml(File.join(base, '_layouts'), 'tagpage.html')
       self.data['tag'] = tag
 
       self.data['title'] = "#{tag_title_prefix}#{tag}#{tag_title_suffix}"
@@ -20,7 +20,7 @@ module Jekyll
 
   class TagPageGenerator < Generator
     def generate(site)
-      if site.layouts.key? 'tag_page'
+      if site.layouts.key? 'tagpage'
 
         tag_dir = site.config['tag_dir'] || 'tag'
 
